@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Gestão de Alunos e Cursos</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <img src="https://cdn-icons-png.flaticon.com/512/3413/3413366.png" alt="aluno">
+
   <h1>Alunos Cadastrados</h1>
 
   <table border="1">
@@ -17,11 +27,17 @@
       </tr>
     </thead>
     <tbody>
-      <% alunos.forEach(aluno => { %>
+      <% alunos.forEach(aluno=> { %>
         <tr>
-          <td><%= aluno.nome %></td>
-          <td><%= aluno.email %></td>
-          <td><%= aluno.curso || "Sem curso" %></td>
+          <td>
+            <%= aluno.nome %>
+          </td>
+          <td>
+            <%= aluno.email %>
+          </td>
+          <td>
+            <%= aluno.curso || "Sem curso" %>
+          </td>
           <td>
             <form action="/alunos/delete/<%= aluno.id %>" method="POST" style="display:inline;">
               <button type="submit">Deletar</button>
@@ -33,7 +49,7 @@
             </form>
           </td>
         </tr>
-      <% }); %>
+        <% }); %>
     </tbody>
   </table>
 
@@ -43,9 +59,11 @@
     <input name="email" placeholder="Email" required />
     <select name="curso_id">
       <option value="">Selecione um curso</option>
-      <% cursos.forEach(curso => { %>
-        <option value="<%= curso.id %>"><%= curso.nome %></option>
-      <% }); %>
+      <% cursos.forEach(curso=> { %>
+        <option value="<%= curso.id %>">
+          <%= curso.nome %>
+        </option>
+        <% }); %>
     </select>
     <button type="submit">Cadastrar</button>
   </form>
@@ -61,9 +79,11 @@
       </tr>
     </thead>
     <tbody>
-      <% cursos.forEach(curso => { %>
+      <% cursos.forEach(curso=> { %>
         <tr>
-          <td><%= curso.nome %></td>
+          <td>
+            <%= curso.nome %>
+          </td>
           <td>
             <form action="/cursos/delete/<%= curso.id %>" method="POST" style="display:inline;">
               <button type="submit">Deletar</button>
@@ -74,7 +94,7 @@
             </form>
           </td>
         </tr>
-      <% }); %>
+        <% }); %>
     </tbody>
   </table>
 
@@ -84,4 +104,5 @@
     <button type="submit">Cadastrar</button>
   </form>
 </body>
+
 </html>

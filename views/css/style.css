@@ -1,60 +1,239 @@
 /* Reset básico para remover estilos padrão do navegador */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(135deg, #ff00ff, #8a2be2, #4b0082);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilo para o cabeçalho */
+header {
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+  to { text-shadow: 2px 2px 20px rgba(255, 0, 255, 0.8); }
+}
+
+/* Estilo para a navegação dentro do cabeçalho */
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header nav ul li a:hover {
+  background: rgba(255, 0, 255, 0.8);
+  border: 2px solid #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.4);
+}
+
+/* Estilo para o conteúdo principal */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  margin-top: 20px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Estilização de títulos */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.7rem; }
+
+/* Estilização de parágrafos */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Estilização de botões */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #ff00ff, #8a2be2);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.4);
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+}
+
+/* Estilo para cartões/cards */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o rodapé */
+footer {
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
   }
   
-  /* Estilo para o corpo da página */
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Estilo para o cabeçalho */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  /* Estilo para a navegação dentro do cabeçalho */
   header nav ul {
-    list-style-type: none;
+    flex-direction: column;
+    gap: 15px;
   }
   
-  header nav ul li {
-    display: inline;
-    margin-right: 20px;
+  main {
+    padding: 20px 15px;
+    margin: 10px;
+    margin-bottom: 80px;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.4rem; }
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
   }
   
   header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
   }
   
-  header nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilo para o conteúdo principal */
   main {
-    padding: 20px;
+    padding: 15px 10px;
+    margin: 5px;
   }
   
-  /* Estilo para o rodapé */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  .card {
+    padding: 15px;
   }
   
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações adicionais */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff00ff, #8a2be2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+}
